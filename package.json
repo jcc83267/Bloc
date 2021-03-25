@@ -1,0 +1,24 @@
+{
+  "name": "Hrd-Cpy",
+  "version": "1.0.0",
+  "description": "Video Game Social Media",
+  "main": "index.js",
+  "dependencies": {
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcc83267/Hrd-Cpy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcc83267/Hrd-Cpy/issues"
+  },
+  "homepage": "https://github.com/jcc83267/Hrd-Cpy#readme"
+}
