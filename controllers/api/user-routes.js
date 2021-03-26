@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Vote, Comment} = require('../../models');
+const { User, Post, Vote, Comment } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -21,24 +21,24 @@ router.get('/:id', (req, res) => {
         },
         include: [
             {
-              model: Post,
-              attributes: ['id', 'title', 'post_url', 'created_at']
-            },
-            {
-              model: Comment,
-              attributes: ['id', 'comment_text', 'created_at'],
-              include: {
                 model: Post,
-                attributes: ['title']
-              }
+                attributes: ['id', 'title', 'post_url', 'created_at']
             },
             {
-              model: Post,
-              attributes: ['title'],
-              through: Vote,
-              as: 'voted_posts'
+                model: Comment,
+                attributes: ['id', 'comment_text', 'created_at'],
+                include: {
+                    model: Post,
+                    attributes: ['title']
+                }
+            },
+            {
+                model: Post,
+                attributes: ['title'],
+                through: Vote,
+                as: 'voted_posts'
             }
-          ]
+        ]
     })
         .then(dbUserData => {
             if (!dbUserData) {
@@ -59,7 +59,15 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
-        .then(dbUserData => res.json(dbUserData))
+        .then(dbUserData => {
+            req.session.save(() => {
+                req.session.user_id = dbUserData.id;
+                req.session.username = dbUserData.username;
+                req.session.loggedIn = true;
+
+                res.json(dbUserData);
+            });
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -73,19 +81,37 @@ router.post('/login', (req, res) => {
         }
     }).then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'No user with that email address!' });
+            res.status(400).json({ message: 'No user found with that email address.' });
             return;
         }
 
         const validPassword = dbUserData.checkPassword(req.body.password);
 
         if (!validPassword) {
-            res.status(400).json({ message: 'Incorrect password!' });
+            res.status(400).json({ message: 'That is not a valid password.' });
             return;
         }
 
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
+        req.session.save(() => {
+            // declare session variables
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+
+            res.json({ user: dbUserData, message: 'You are now signed in.' });
+        });
     });
+});
+
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else {
+        res.status(404).end();
+    }
 });
 
 router.put('/:id', (req, res) => {

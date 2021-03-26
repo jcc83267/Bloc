@@ -2,28 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bloc 🔲 | Game Reviews by (Real) Gamers</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloc 🔲 | Game Reviews by (Real) Gamers</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Bloc <i class="fas fa-cube"></i></a>
-        
-      </h1>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      Welcome
-    </footer>
-  </div>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/">Bloc <i class="fas fa-cube"></i></a>
+            </h1>
+            <nav>
+                <a href="/login">Sign In</a>
+                <a href="/register">Register</a>
+                <button id="logout" class="btn-no-style">Sign Out</button>
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            Welcome
+        </footer>
+    </div>
+
+    <script src="/javascript/logout.js"></script>
 
 </body>
 
