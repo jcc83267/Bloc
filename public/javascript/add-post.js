@@ -27,7 +27,7 @@ async function newFormHandler(event) {
 
                 let boxArtUrl = response.data[0].box_art_url;
                 let officialArtwork = boxArtUrl.split("{");
-                officialArtwork = officialArtwork[0] + "100x400.jpg"
+                officialArtwork = officialArtwork[0] + "275x400.jpg"
                 console.log(officialArtwork);
               }
             });
