@@ -6,7 +6,7 @@ async function newFormHandler(event) {
   console.log("button clicked.");
   
   let apiUrl = "https://api.twitch.tv/helix/games?name=" + title;
-
+    
   await fetch(apiUrl, {
     method: "GET",
     headers: {
