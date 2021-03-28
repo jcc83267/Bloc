@@ -1,21 +1,24 @@
 {{> topgames }}
 
-<ol class="post-list">
-  {{#each posts}}
+<div class="center">
+  <div>
+    <h2 class="jumbotron p-3 mb-2 bg-primary text-white font-weight-bold" href="/">
+      Welcome to Bloc
+    </h2>
+    <p class="slogan">
+      Game reviews by (real) gamers.
+    </p>
+  </div>
+</div>
+
+<h3>
+  <a href="/">Recent Reviews</a>
+</h3>
+
+<ul class="post-list">
+  {{#each posts as |post|}}
   <li>
-    <article class="post">
-      <div class="title">
-        <a href="{{post_url}}" target="_blank">{{title}}</a>
-        <span>({{post_url}})</span>
-      </div>
-      <div class="meta">
-        {{vote_count}} 🍑's by {{user.username}} on
-        {{created_at}}
-        |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-      </div>
-    </article>
+    {{> post-info post }}
   </li>
   {{/each}}
-</ol>
-
+</ul>

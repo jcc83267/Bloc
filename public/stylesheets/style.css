@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  /* background-color: #380000; */
 }
 
 body, html {
@@ -12,7 +13,8 @@ body, html {
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: #cc01ff;
+  /* color: #ffe4b5; */
   font-weight: bold;
   transition: color .1s;
 }
@@ -22,10 +24,10 @@ a:hover {
 }
 
 button {
-  background-color: #225ca3;
+  background-color: #cc01ff;
   border: 0;
   padding: 1%;
-  color: white;
+  color: #ffe4b5;
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
@@ -45,6 +47,7 @@ textarea, input {
   padding: .5%;
   border-radius: 5px;
   border: 1px solid #ccc;
+  background-color: #ffff;
 }
 
 textarea:focus, input:focus {
@@ -84,6 +87,10 @@ header {
 
 header h1 {
   font-size: 1em;
+}
+
+.jumbotron {
+  text-align: center;
 }
 
 main {
@@ -152,7 +159,7 @@ main {
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+  background-color: #ff8000;
 }
 
 .comment .meta {
