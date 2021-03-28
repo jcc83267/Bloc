@@ -1,0 +1,24 @@
+{{> topgames }}
+
+<div class="center">
+  <div>
+    <h2 class="jumbotron p-3 mb-2 bg-primary text-white font-weight-bold" href="/">
+      Welcome to Bloc
+    </h2>
+    <p class="slogan">
+      Game reviews by (real) gamers.
+    </p>
+  </div>
+</div>
+
+<h3>
+  <a href="/">Recent Reviews</a>
+</h3>
+
+<ul class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  {{/each}}
+</ul>

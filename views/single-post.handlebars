@@ -1,0 +1,30 @@
+<article class="post">
+    <div class="title">
+        <h1 href="{{post.post_url}}" target="_blank">{{post.title}}</h1>
+    </div>
+        by {{post.user.username}} on {{format_date post.created_at}}
+    <div class="meta">
+        [{{post.vote_count}} 🍑's]
+    </div>
+</article>
+
+
+{{#if loggedIn}}
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>           
+        <button type="submit">🗨️</button>
+        <button type="button" class="upvote-btn">🍑</button>
+    </div>
+</form>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/upvote.js"></script>
+{{/if}}
