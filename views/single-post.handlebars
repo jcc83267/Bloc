@@ -1,14 +1,10 @@
-
 <article class="post">
     <div class="title">
-        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-        <span>({{post.post_url}})</span>
+        <h1 href="{{post.post_url}}" target="_blank">{{post.title}}</h1>
     </div>
+        by {{post.user.username}} on {{format_date post.created_at}}
     <div class="meta">
-        {{post.vote_count}} 🍑's by {{post.user.username}} on
-        {{post.created_at}}
-        |
-        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+        [{{post.vote_count}} 🍑's]
     </div>
 </article>
 
@@ -19,7 +15,7 @@
         <textarea name="comment-body"></textarea>
     </div>
 
-    <div>
+    <div>           
         <button type="submit">🗨️</button>
         <button type="button" class="upvote-btn">🍑</button>
     </div>

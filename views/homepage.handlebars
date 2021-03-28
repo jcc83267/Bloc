@@ -1,11 +1,22 @@
-<h1>
-  <a href="/">Recent Reviews</a>
-</h1>
+<div class="center">
+  <div>
+    <h1 class="jumbotron" href="/">
+      Welcome to Bloc
+    </h1>
+    <p class="jumbotron">
+      Game reviews by (real) gamers.
+    </p>
+  </div>
+</div>
 
-<ol class="post-list">
+<h2>
+  <a href="/">Recent Reviews</a>
+</h2>
+
+<ul class="post-list">
   {{#each posts as |post|}}
   <li>
     {{> post-info post }}
   </li>
   {{/each}}
-</ol>
+</ul>
