@@ -2,13 +2,19 @@
     <div class="title">
         <a href="/post/{{id}}" target="_blank">{{title}}</a>
         {{!-- <span>({{format_url post_url}})</span> --}}
+        <img src="{{post_url}}" alt="">
     </div>
     <div class="meta">
         by {{user.username}} on {{format_date created_at}}
         
     </div>
     <div>
-        [{{vote_count}} 🍑's]
+    {{post_content}}
+       hello
+         
+    </div>
+    <div>
+        [{{vote_count}} 🍑's]  [ {{star_rating}} ⭐]
         <a href="/post/{{id}}">{{comments.length}} 🗨️ Comments</a>
     </div>
 </article>

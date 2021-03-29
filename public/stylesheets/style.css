@@ -153,7 +153,7 @@ main {
   width: 50px;
 }
 
-.rating label::before{
+.star::before{
   content: '\f005';
   font-family: fontAwesome;
   position: relative;
@@ -162,7 +162,7 @@ main {
   color: #101010;
 }
 
-.rating label:after{
+.star::after{
   content: '\f005';
   font-family: fontAwesome;
   position: absolute;

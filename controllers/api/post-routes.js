@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Post.findAll({
-        attributes: ['id', 'post_url', 'title', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']],
+        attributes: ['id', 'post_url', 'title', 'post_content', 'star_rating', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']],
         order: [['created_at', 'DESC']],
         include: [
             {
@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'post_url', 'title', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']],
+        attributes: ['id', 'post_url', 'title', 'post_content', 'star_rating', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']],
         include: [
             {
                 model: User,
@@ -59,6 +59,8 @@ router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         post_url: req.body.post_url,
+        post_content: req.body.post_content,
+        star_rating: req.body.star_rating,
         user_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
@@ -82,7 +84,9 @@ router.put('/upvote', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
-            title: req.body.title
+            title: req.body.title,
+            post_content: req.body.post_content,
+            star_rating: req.body.star_rating
         },
         {
             where: {

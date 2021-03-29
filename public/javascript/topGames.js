@@ -11,7 +11,6 @@ function init() {
         .then(function (response) {
             response.json()
                 .then(function (data) {
-                    console.log(data);
                     let topGameContainer = document.querySelector("#top-games");
                     topGameContainer.innerHTML = "";
                     let gameArr = [];
@@ -35,7 +34,6 @@ function init() {
                         let twitchLink = "https://www.twitch.tv/directory/game/" + encodeURIComponent(gameArr[i].trim())
                         let fixImgUrl = tempImgURL.split('{width');
                         let imgUrl = fixImgUrl[0] + '300x400.jpg'
-                        console.log(imgUrl)
                         //create container 
                         let cardContainer = document.createElement("div");
                         cardContainer.classList = "col-3";
@@ -73,7 +71,6 @@ function init() {
 }
 
 function nextFour() {
-    console.log(startingPoint)
     if (startingPoint >= 14) {
         startingPoint = 0
         init()
@@ -85,7 +82,6 @@ function nextFour() {
 }
 
 function lastFour() {
-    console.log(startingPoint)
     if (startingPoint <= 4) {
         startingPoint = 13;
         init();
