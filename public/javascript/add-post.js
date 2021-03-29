@@ -66,6 +66,7 @@ async function newFormHandler(event) {
   });
 
   if (response.ok) {
+    star_rating = 0;
     document.location.replace('/dashboard');
   } else {
     alert(response.statusText);
@@ -73,28 +74,37 @@ async function newFormHandler(event) {
 }
 
 function star1() {
+  console.log(star_rating)
   return star_rating = 1
 }
 function star2() {
+  console.log(star_rating)
+
   return star_rating = 2
 } 
 function star3() {
+  console.log(star_rating)
+
   return star_rating = 3
 } 
 function star4() {
+  console.log(star_rating)
+
   return star_rating = 4
 } 
 function star5() {
+
+  console.log(star_rating)
   return star_rating = 5
 }
 
 
 document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
-document.querySelector('#star1').addEventListener('click', star1);
-document.querySelector('#star2').addEventListener('click', star2);
-document.querySelector('#star3').addEventListener('click', star3);
-document.querySelector('#star4').addEventListener('click', star4);
 document.querySelector('#star5').addEventListener('click', star5);
+document.querySelector('#star4').addEventListener('click', star4);
+document.querySelector('#star3').addEventListener('click', star3);
+document.querySelector('#star2').addEventListener('click', star2);
+document.querySelector('#star1').addEventListener('click', star1);
 
 
 
