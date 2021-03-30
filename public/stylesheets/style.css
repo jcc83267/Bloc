@@ -1,6 +1,17 @@
+:root {
+  --background: #131a22;
+  --primary: #4361ee;
+  --secondary: #4CC9F0;
+  --tertiary: #fff;
+  --title: #3a0ca3;
+  --review: #f0C808;
+}
+
 * {
   box-sizing: border-box;
-  /* background-color: #380000; */
+  background-color: var(--background);
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  
 }
 
 body, html {
@@ -8,26 +19,25 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #333;
+  color: var(--tertiary);
 }
 
 a {
   text-decoration: none;
-  color: #cc01ff;
-  /* color: #ffe4b5; */
+  color: var(--primary);
   font-weight: bold;
   transition: color .1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: var(--tertiary);
 }
 
 button {
-  background-color: #cc01ff;
+  background-color: var(--primary);
   border: 0;
   padding: 1%;
-  color: #ffe4b5;
+  color: var(--secondary);
   font-weight: bold;
   transition: background-color .1s;
   cursor: pointer;
@@ -35,7 +45,7 @@ button {
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: var(--tertiary);
 }
 
 .post-list {
@@ -46,7 +56,7 @@ button:hover {
 textarea, input {
   padding: .5%;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--tertiary);
   background-color: #ffff;
 }
 
@@ -91,6 +101,8 @@ header h1 {
 
 .jumbotron {
   text-align: center;
+  color: var(--title);
+  background-color: var(--secondary);
 }
 
 main {
@@ -158,7 +170,7 @@ main {
   margin-bottom: 1%;
 }
 
-.comment:nth-child(odd) {
+.comments {
   background-color: #ff8000;
 }
 

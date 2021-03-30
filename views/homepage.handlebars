@@ -9,14 +9,12 @@
   </div>
 </div>
 
-<h2>
-  <a href="/">Recent Reviews</a>
-</h2>
+<h4>
+  <p href="/">Recent Reviews</p>
+</h4>
 
-<ul class="post-list">
+<div class="container">
   {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
+  {{> post-info post }}
   {{/each}}
-</ul>
+</div>

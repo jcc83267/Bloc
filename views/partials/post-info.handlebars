@@ -1,5 +1,5 @@
 <article class="post">
-    <div class="title">
+    <div class="title review">
         <a href="/post/{{id}}" target="_blank">{{title}}</a>
         {{!-- <span>({{format_url post_url}})</span> --}}
     </div>
@@ -8,7 +8,6 @@
         
     </div>
     <div>
-        [{{vote_count}} 🍑's]
-        <a href="/post/{{id}}">{{comments.length}} 🗨️ Comments</a>
+      <p href="/post/{{id}}"> [{{vote_count}} 🍑's] | {{comments.length}} 🗨️ Comments</p>
     </div>
 </article>
