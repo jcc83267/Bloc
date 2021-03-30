@@ -4,7 +4,6 @@
   --secondary: #4CC9F0;
   --tertiary: #fff;
   --title: #3a0ca3;
-  --review: #f0C808;
 }
 
 * {
@@ -33,9 +32,9 @@ a {
   transition: color .1s;
 }
 
-a:hover {
+/* a:hover {
   color: var(--tertiary);
-}
+} */
 
 button {
   background-color: var(--primary);
@@ -245,4 +244,8 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+}
+
+body {
+  background-color: var(--background);
 }
