@@ -14,7 +14,7 @@ function init() {
                     let number = 4;
                     for (let i = startingPoint; i < (number + startingPoint); i++) {
                         let tempID = data.data[i].id;
-                        if (tempID === "509658" || tempID === "26936") {
+                        if (tempID === "509658" || tempID === "26936" || tempID === "509659") {  //just chatting //music // asmr
                             number++;
                             startingPoint++;
                         } else {
