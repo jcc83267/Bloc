@@ -1,12 +1,8 @@
 let startingPoint = 0
 
 function init() {
-    fetch("https://api.twitch.tv/helix/games/top", {
-        method: "GET",
-        headers: {
-            "Client-ID": "w6k0p7kqfipr0j3xuj55q2z85vrs57",
-            "Authorization": "Bearer t3brkytbcv2i1175txe20x1epa3lj6"
-        }
+    const response = fetch(`/api/twitch/topGames`, {
+        method: 'GET',
     })
         .then(function (response) {
             response.json()
@@ -18,7 +14,7 @@ function init() {
                     let number = 4;
                     for (let i = startingPoint; i < (number + startingPoint); i++) {
                         let tempID = data.data[i].id;
-                        if (tempID === "509658" || tempID === "26936") {
+                        if (tempID === "509658" || tempID === "26936" || tempID === "509659") {  //just chatting //music // asmr
                             number++;
                             startingPoint++;
                         } else {
@@ -71,14 +67,15 @@ function init() {
 }
 
 function nextFour() {
-    if (startingPoint >= 14) {
+    if (startingPoint >= 12) {
+        // console.log(startingPoint)
         startingPoint = 0
         init()
     } else {
+        // console.log(startingPoint)
         startingPoint += 4;
         init();
     }
-
 }
 
 function lastFour() {
