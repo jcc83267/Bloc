@@ -1,17 +1,18 @@
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 function init (){
     title = document.location.href;
     titleArr = title.split('/')
-    for(let i = 0; i < titleArr.length; i++) {
-        console.log(i, titleArr[i])
+    let titleEdit = titleArr[4].replaceAll("%20", " ");
+    let words = titleEdit.split(" ");
+    for(let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1)
     }
-    console.log(title);
-
-    titleEl = document.querySelector('.review-title');
-    titleEl.innerHTML = capitalizeFirstLetter(titleArr[4]);
+    words.join(" ")
+    let finishedTitle = ""
+    for(let i = 0; i < words.length; i++) {
+        finishedTitle += words[i] + " "
+    }
+    let titleEl = document.querySelector('.review-title');
+    titleEl.innerHTML = finishedTitle;
 }
 
 init();
