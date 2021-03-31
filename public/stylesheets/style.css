@@ -32,9 +32,6 @@ a {
   transition: color .1s;
 }
 
-/* a:hover {
-  color: var(--tertiary);
-} */
 
 button {
   background-color: var(--primary);
@@ -46,10 +43,6 @@ button {
   cursor: pointer;
   border-radius: 5px;
 }
-
-/* button:hover {
-  background-color: var(--tertiary);
-} */
 
 .post-list {
   margin: 0;
@@ -126,11 +119,6 @@ main {
   margin-left: 16px;
 }
 
-/* .btn-no-style:hover {
-  background: none;
-  color: #3486eb;
-} */
-
 .delete-post-btn {
   background-color: #d41414;
 }
@@ -155,7 +143,7 @@ main {
   position: absolute;
   top: 50%;
   left: 70%;
-  transform: translate(-50%, -50%);
+  transform: translate(-75%, 20%);
   flex-direction: row-reverse;
 }
 .rating input{
@@ -165,7 +153,7 @@ main {
 .rating label{
   display: block;
   cursor: pointer;
-  width: 50px;
+  width: 40px;
 }
 
 .star::before{
@@ -173,7 +161,7 @@ main {
   font-family: fontAwesome;
   position: relative;
   display: block;
-  font-size: 50px;
+  font-size: 40px;
   color: #101010;
 }
 
@@ -182,8 +170,8 @@ main {
   font-family: fontAwesome;
   position: absolute;
   display: block;
-  font-size: 50px;
-  color: #1f9cff ;
+  font-size: 40px;
+  color: #FFD700 ;
   top: 0;
   opacity: 0;
   transition: .5s;
@@ -211,23 +199,29 @@ main {
   background-color: #1f9c13;
 }
 
+.comment-btn {
+  background-color: var(--primary);
+  transition: background-color 0.5s;
+}
+
+.comment-btn:hover {
+  background-color: var(--secondary);
+}
+
 .comment-form {
   margin-bottom: 5%;
 }
 
-.comment {
-  padding: 1%;
+.comment-text{
+  padding-top: -2px;
+}
+
+.comment div,
+.comment section {
+  padding: 0.5%;
   margin-bottom: 1%;
-}
-
-.comments {
-  background-color: #ff8000;
-}
-
-.comment .meta {
-  font-size: 90%;
-  margin-bottom: .5%;
-  opacity: .6;
+  background-color: var(--secondary);
+  color: var(--title);
 }
 
 .new-post-form input {
@@ -244,8 +238,63 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
+.modal-post {
+  border: var(--tertiary) 2px solid;
+    max-width: inherit;
+}
+/* .a-twitch{
+  text-decoration: none;
+}
+
+.twitch-button-container{
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  background: #9147ff;
+}
+.twitch-button-container:hover{
+  background: #772ce8;
+} */
+
 body {
-  background-color: var(--background);
+  background: var(--background);
+}
+
+.modal-bg {
+  background: none;
+}
+
+.modal-backdrop {
+  opacity: 0.2;
+}
+
+.bloc-box div {
+  background-color: var(--secondary);
+  color: var(--title);
+}
+
+.bloc-box p {
+  background-color: var(--secondary);
+  color: var(--title);
+}
+
+.bloc-box h4 {
+  background-color: var(--secondary);
+  color: var(--title);
+}
+
+.bloc-box h4 {
+  background-color: var(--secondary);
+  color: var(--title);
+}
+
+.topgames {
+  align-items: center;
+}
+
+.review-title {
+  font-size: 48px;
 }

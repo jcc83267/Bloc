@@ -22,4 +22,18 @@ async function loginFormHandler(event) {
   }
 }
 
+async function twitchFormHandler(event){
+  event.preventDefault();
+  console.log("cdasdasd")
+  const response = fetch(`/api/twitch/login`, {
+    method: 'GET',
+  })
+  .then((response) => response.json())
+      .then(function (response) {
+        console.log(response)
+        
+})
+}
+
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+// document.querySelector('.twitch-button-container').addEventListener('click', twitchFormHandler);
