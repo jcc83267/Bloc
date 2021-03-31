@@ -16,6 +16,7 @@ router.get('/:title', (req, res) => {
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
+    order: [['created_at', 'DESC']],
     include: [
       {
         model: Comment,
@@ -34,6 +35,7 @@ router.get('/:title', (req, res) => {
     .then(dbPostData => {
       // serialize data before passing to template
       const posts = dbPostData.map(post => post.get({ plain: true }));
+      console.log(posts);
       res.render('reviews', { posts, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
