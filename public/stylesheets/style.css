@@ -245,6 +245,19 @@ footer {
   padding: 1%;
   font-size: 110%;
 }
+/* .a-twitch{
+  text-decoration: none;
+}
+
+.twitch-button-container{
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  background: #9147ff;
+}
+.twitch-button-container:hover{
+  background: #772ce8;
+} */
 
 body {
   background-color: var(--background);
