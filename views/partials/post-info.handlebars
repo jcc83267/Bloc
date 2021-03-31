@@ -1,19 +1,28 @@
-<article class="post">
-    <div class="title">
-        <a href="/post/{{id}}">{{title}}</a>
-        {{!-- <span>({{format_url post_url}})</span> --}}
-        <img src="{{post_url}}" alt="">
-    </div>
-    <div class="meta">
-        by {{user.username}} on {{format_date created_at}}
-        
-    </div>
-    <div>
-    {{post_content}}
-  
-    </div>
-    <div>
-        [{{vote_count}} 🍑's]  [ {{star_rating}} ⭐]
-        <p href="/post/{{id}}">{{comments.length}} 🗨️ Comments</p>
+<article class="post p-2">
+    <div class="container-fluid bloc-box">
+        <div class="title row">
+            <h4 class="bloc-box ml-3">
+                <a href="/post/{{id}}">{{title}}</a>
+            </h4>
+            {{!-- <span>({{format_url post_url}})</span> --}}
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{{post_url}}" alt="">
+
+            </div>
+            <div class="col-8">
+                {{post_content}}
+
+            </div>
+        </div>
+        <div class="meta row pl-3">
+            by {{user.username}} on {{format_date created_at}}
+
+        </div>
+        <div class="row pl-3">
+            [{{vote_count}} 🍑's] [ {{star_rating}} ⭐]
+            <p href="/post/{{id}}" class="blox-box">{{comments.length}} 🗨️ Comments</p>
+        </div>
     </div>
 </article>

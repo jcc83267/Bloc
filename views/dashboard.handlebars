@@ -1,6 +1,6 @@
 <!-- form for adding post -->
 <section>
-  <h2>Write a New Review on a Title</h2>
+  <h2>Write a new Bloc</h2>
 
   <form class="search-game-form">
     <div>
@@ -8,55 +8,72 @@
       <input type="text" id="post-title" name="post-title" />
     </div>
 
-    <button type="button" class="btn btn-primary" id="search-game-btn"><a  href="">Search Game</a></button>
+    <button type="button" class="btn btn-outline-primary" id="search-game-btn"><a href="">Search Title</a></button>
   </form>
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="createPostModal" tabindex="-1" role="dialog" aria-labelledby="createPostModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="createPostModalLabel">I PLAYED...</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+<div class="modal-body">
+  <div class="modal fade container-fluid modal-bg" id="createPostModal" tabindex="-1" role="dialog"
+    aria-labelledby="createPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content modal-post container">
+        <div class="modal-header row">
+          <h5 class="modal-title" id="createPostModalLabel">I Played...</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          </button>
+        </div>
 
-      <div class="modal-body">
-        <!-- title of the game searched -->
-        <h3 id="searched-title" class=""></h3>
-        <!-- image of game artwork -->
-        <img src="" alt="game artwork" id="searched-artwork" class="">
+        <div class="modal-body row">
+          <div class="col-md-6">
+            <!-- title of the game searched -->
+            <h4 id="searched-title" class=""></h4>
+            <!-- image of game artwork -->
+            <img src="" alt="game artwork" id="searched-artwork" class="">
+          </div>
 
-        <!-- form for content of post -->
-        <form class="new-post-form rating">
-          <input type="radio" name="star" id="star5"><label class="star" for="star5"></label>
-          <input type="radio" name="star" id="star4"><label class="star" for="star4"></label>
-          <input type="radio" name="star" id="star3"><label class="star" for="star3"></label>
-          <input type="radio" name="star" id="star2"><label class="star" for="star2"></label>
-          <input type="radio" name="star" id="star1"><label class="star" for="star1"></label>
-          <label for="post-content">What did you think of the game?</label>
-          <textarea name="post-content" id="post-review" cols="30" rows="10"></textarea>
-          <button type="submit" class="btn btn-primary">Post Review</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+          <!-- form for content of post -->
+          <div class="container-fluid col-md-6 ml-auto">
+            <div class="">
+              <label for="post-content">What did you think of the game?</label>
+              <textarea name="post-content" id="post-review" rows="4" cols="25"></textarea>
+            </div>
+
+            <div>
+              <form class="new-post-form rating">
+                <input type="radio" name="star" id="star5"><label class="star" for="star5"></label>
+                <input type="radio" name="star" id="star4"><label class="star" for="star4"></label>
+                <input type="radio" name="star" id="star3"><label class="star" for="star3"></label>
+                <input type="radio" name="star" id="star2"><label class="star" for="star2"></label>
+                <input type="radio" name="star" id="star1"><label class="star" for="star1"></label>
+              </form>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer row">
+          <button type="button" class="btn btn-primary btn-post">Post Review</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<ol class="post-list">
+<div>
+<h3>
+  Your Previous Reviews
+</h3>
+</div>
+
+<div>
   {{#each posts as |post|}}
-  <li>
     {{> post-info post }}
-    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-  </li>
+    <a href="/dashboard/edit/{{post.id}}" class="edit-link pl-2">[Edit Post ✏️]</a>
   {{/each}}
-</ol>
+</div>
+  
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

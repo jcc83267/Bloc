@@ -1,13 +1,29 @@
 <article class="post">
     <div class="title">
-        <h1 href="{{post.post_url}}" target="_blank">{{post.title}}</h1>
+        <h1>
+            {{post.title}}
+        </h1>
     </div>
-        by {{post.user.username}} on {{format_date post.created_at}}
-    <div class="meta">
+        reviewed by {{post.user.username}} on {{format_date post.created_at}}
         [{{post.vote_count}} 🍑's]
+        <br>
+        [{{post.star_rating}} ⭐]
+    <div class="row">
+        <div class="col p-4">
+            <img src="{{post.post_url}}" alt="">
+        </div>
+        <div class="col-8 p-4">
+            {{post.post_content}}
+        </div>
     </div>
+    
 </article>
 
+<div>
+    <h3>
+        <p>{{comments.length}} 🗨️ Comment Section</p>
+    </h3>
+</div>
 
 {{#if loggedIn}}
 <form class="comment-form">
@@ -16,7 +32,7 @@
     </div>
 
     <div>           
-        <button type="submit">🗨️</button>
+        <button type="submit" class="comment-btn">🗨️</button>
         <button type="button" class="upvote-btn">🍑</button>
     </div>
 </form>
