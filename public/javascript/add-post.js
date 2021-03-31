@@ -21,7 +21,7 @@ $(document).ready(function () {
           savedTitle = response.data[0].name;
           let post_url_setup = response.data[0].box_art_url;
           post_url_setup = post_url_setup.split("{");
-          post_url = post_url_setup[0] + "225x300.jpg";
+          post_url = post_url_setup[0] + "188x250.jpg";
           let searchedArtworkRender = $("#searched-artwork")
             .attr({
               src: post_url
@@ -32,6 +32,7 @@ $(document).ready(function () {
 });
 
 async function newFormHandler(event) {
+  console.log('click');
   event.preventDefault();
   const title = savedTitle;
   const post_content = document.querySelector('textarea[name="post-content"]').value;
@@ -81,7 +82,7 @@ function star5() {
   return star_rating = 5
 }
 
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+document.querySelector('.btn-post').addEventListener('click', newFormHandler);
 document.querySelector('#star5').addEventListener('click', star5);
 document.querySelector('#star4').addEventListener('click', star4);
 document.querySelector('#star3').addEventListener('click', star3);
