@@ -201,7 +201,7 @@ main {
 
 .comment-btn {
   background-color: var(--primary);
-  transition: background-color .1s;
+  transition: background-color 0.5s;
 }
 
 .comment-btn:hover {
@@ -280,4 +280,8 @@ body {
 
 .topgames {
   align-items: center;
+}
+
+.review-title {
+  font-size: 48px;
 }

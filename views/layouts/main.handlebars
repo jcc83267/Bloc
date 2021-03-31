@@ -25,24 +25,33 @@
 <body>
     <div class="wrapper">
         <header>
+
+
             <h1>
-                <a href="/" class="navbar navbar-brand"><i class="fas fa-cube"></i></a>
+                <a href="/" class="navbar navbar-brand"><i class="fas fa-cube fa-2x"></i></a>
             </h1>
-            <nav>
-                <form class="search-review-form">
-                    <input type="text" id="searched-title" name="searched-title" placeholder="Enter Game Title" />
-                    <button type="button" class="btn btn-primary" id="search-review-btn">
-                        Search Game
-                    </button>
-                </form>
-                {{#if loggedIn}}
-                <button class="btn btn-outline-primary" type="submit"><a href="/dashboard">Dashboard</a></button>
-                <button id="logout" class="btn btn-outline-primary"> <a href="">Sign Out</a> </button>
-                {{else}}
-                <button class="btn btn-outline-primary" type="submit"><a href="/login">Sign In</a>
-                </button>
-                <button class="btn btn-outline-primary" type="submit"><a href="/register">Register</a></button>
-                {{/if}}
+            <nav class="navbar navbar-brand p-3">
+                <div>
+                    <form class="search-review-form">
+                        {{#if loggedIn}}
+                        <button class="btn btn-sm btn-outline-primary" type="submit"><a
+                                href="/dashboard">My Blocs</a></button>
+                        <button id="logout" class="btn btn-sm btn-outline-primary"> <a href="">Sign Out</a> </button>
+                        {{else}}
+                        <button class="btn btn-sm btn-outline-primary" type="submit"><a href="/login">Sign In</a>
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary" type="submit"><a
+                                href="/register">Register</a></button>
+                        {{/if}}
+
+                        <input type="text" class="col-form-label-sm" id="searched-title" name="searched-title" placeholder="Enter Game Title" />
+
+                        <button type="button" class="btn btn-sm btn-outline-success search-btn" id="search-review-btn">
+                            🔍
+                        </button>
+                    </form>
+                </div>
+
             </nav>
         </header>
         <main>
