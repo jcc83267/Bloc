@@ -48,7 +48,7 @@ Post.init(
         }
       },
       post_content: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false
       },
       star_rating: {
