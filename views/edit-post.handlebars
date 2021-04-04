@@ -1,35 +1,39 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <a href="/post/{{post.id}}">{{post.title}}</a>
-      <img src="{{post.post_url}}" alt="">
-      <input name="post-content" type="text" value="{{post.post_content}}" />
+  <div class="title col">
+    <h4>
+      Bloc Editor
+    </h4>
+    <h2 class="">
+      {{post.title}}
+    </h2>
+  </div>
+  <form class="edit-post-form col">
+    <div class="row">
+      <div class="col p-4">
+        <img src="{{post.post_url}}" alt="">
+      </div>
+      <div class="col-8 p-4">
+        <textarea name="post-content" id="edit-content" class="form-control" cols="5" rows="10" style="min-width: 100%;">{{post.post_content}}</textarea>
+      </div>
+    </div>
+    <div class="col">
+      [{{post.vote_count}} 🍑's]
+      <br>
+      [ {{post.star_rating}} ⭐]
+      <a href="/post/{{post.id}}">{{post.comments.length}} 🗨️ Comments</a>
+    </div>
+    <div class="col">
+      <a href="/post/{{post.id}}">Return to original post</a>
     </div>
     <div>
-        [{{post.vote_count}} 🍑's]  [ {{post.star_rating}} ⭐]
-        <a href="/post/{{post.id}}">{{post.comments.length}} 🗨️ Comments</a>
+    <button type="submit" class="btn btn-sm btn-outline-primary">Save Bloc</button>
+    <button type="button" class="btn-delete btn btn-sm btn-outline-danger">Delete Bloc</button>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
   </form>
 </article>
-
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
 
 {{> comments post.comments}}
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>

@@ -9,10 +9,11 @@ async function deleteFormHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace("/dashboard/");
+    window.location.assign("/dashboard")
+    
   } else {
     alert(response.statusText);
   }
 }
 
-document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
+document.querySelector('.btn-delete').addEventListener('click', deleteFormHandler);
