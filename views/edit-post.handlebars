@@ -17,7 +17,7 @@
         <textarea name="post-content" id="edit-content" class="form-control" cols="5" rows="10" style="min-width: 100%;">{{post.post_content}}</textarea>
       </div>
     </div>
-    <div>
+    <div class="col">
       [{{post.vote_count}} 🍑's]
       <br>
       [ {{post.star_rating}} ⭐]
@@ -26,8 +26,10 @@
     <div class="col">
       <a href="/post/{{post.id}}">Return to original post</a>
     </div>
+    <div>
     <button type="submit" class="btn btn-sm btn-outline-primary">Save Bloc</button>
     <button type="button" class="btn-delete btn btn-sm btn-outline-danger">Delete Bloc</button>
+    </div>
   </form>
 </article>
 
