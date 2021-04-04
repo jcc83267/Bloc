@@ -17,7 +17,7 @@
         <input name="post-content" type="text" size="100" value="{{post.post_content}}" />
       </div>
     </div>
-    <div>
+    <div class="col">
       [{{post.vote_count}} 🍑's]
       <br>
       [ {{post.star_rating}} ⭐]
@@ -26,8 +26,11 @@
     <div class="col">
       <a href="/post/{{post.id}}">Return to original post</a>
     </div>
-    <button type="submit" class="btn btn-sm btn-outline-primary">Save Bloc</button>
-    <button type="button" class="btn btn-sm btn-outline-danger">Delete Bloc</button>
+    <div>
+      <button type="submit" class="btn btn-sm btn-outline-primary">Save Bloc</button>
+      <button type="button" class="btn btn-sm btn-outline-danger">Delete Bloc</button>
+    </div>
+
   </form>
 </article>
 
