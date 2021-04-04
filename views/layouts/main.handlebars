@@ -34,9 +34,9 @@
                 <div>
                     <form class="search-review-form">
                         {{#if loggedIn}}
-                        <button class="btn btn-sm btn-outline-primary" type="submit"><a href="/dashboard">My
-                                Blocs</a></button>
-                        <button id="logout" class="btn btn-sm btn-outline-primary"> <a href="">Sign Out</a> </button>
+                        <button class="btn btn-sm btn-outline-primary" type="submit"><a
+                                href="/dashboard">My Blocs</a></button>
+                        <button id="logout" class="btn btn-sm btn-outline-primary"><a href="">Sign Out</a></button>
                         {{else}}
                         <button class="btn btn-sm btn-outline-primary" type="submit"><a href="/login">Sign In</a>
                         </button>
@@ -44,8 +44,7 @@
                                 href="/register">Register</a></button>
                         {{/if}}
 
-                        <input type="text" class="col-form-label-sm" id="searched-title" name="searched-title"
-                            placeholder="Enter Game Title" />
+                        <input type="text" class="col-form-label-sm" id="searched-title" name="searched-title" placeholder="Enter Game Title" />
 
                         <button type="button" class="btn btn-sm btn-outline-success search-btn" id="search-review-btn">
                             🔍
@@ -64,10 +63,11 @@
         </footer>
     </div>
 
-    <script src="/javascript/login.js"></script>
-    <script src="/javascript/register.js"></script>
     <script src="/javascript/search-reviews.js"></script>
-    <script src="/javascript/logout.js"></script>
+    
+    {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>
