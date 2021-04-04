@@ -2,6 +2,11 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
+router.get('/', (req, res) => {
+  res.redirect('/');
+});
+
+
 router.get('/:title', (req, res) => {
   Post.findAll({
     where: {
@@ -35,8 +40,9 @@ router.get('/:title', (req, res) => {
     .then(dbPostData => {
       // serialize data before passing to template
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      console.log(posts);
-      res.render('reviews', { posts, loggedIn: req.session.loggedIn });
+      const postNum = posts.length;
+      console.log(posts.length);
+      res.render('reviews', { posts, loggedIn: req.session.loggedIn, postNum: postNum });
     })
     .catch(err => {
       console.log(err);

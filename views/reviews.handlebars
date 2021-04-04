@@ -1,16 +1,23 @@
-<article >
+<article>
   <p class="">
     Bloc Search Results:
   </p>
   <div class="review-title">
-    
+
   </div>
 
+  {{#if postNum}}
   <div class="container">
     {{#each posts as |post|}}
     {{> post-info post }}
     {{/each}}
   </div>
+  {{else}}
+  <div class="container row">
+    <p>Sorry, no Blocs have been made for this title yet.</p>
+  </div>
+  {{/if}}
+
 </article>
 
 <script src="/javascript/reviews-pages.js"></script>

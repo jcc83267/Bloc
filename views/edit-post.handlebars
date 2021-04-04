@@ -14,7 +14,7 @@
         <img src="{{post.post_url}}" alt="">
       </div>
       <div class="col-8 p-4">
-        <input name="post-content" type="text" size="100" value="{{post.post_content}}" />
+        <textarea name="post-content" id="edit-content" class="form-control" cols="5" rows="10" style="min-width: 100%;">{{post.post_content}}</textarea>
       </div>
     </div>
     <div>
@@ -27,7 +27,7 @@
       <a href="/post/{{post.id}}">Return to original post</a>
     </div>
     <button type="submit" class="btn btn-sm btn-outline-primary">Save Bloc</button>
-    <button type="button" class="btn btn-sm btn-outline-danger">Delete Bloc</button>
+    <button type="button" class="btn-delete btn btn-sm btn-outline-danger">Delete Bloc</button>
   </form>
 </article>
 
@@ -35,4 +35,3 @@
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
