@@ -16,7 +16,7 @@
 <div class="modal-body">
   <div class="modal fade container-fluid modal-bg" id="createPostModal" tabindex="-1" role="dialog"
     aria-labelledby="createPostModalLabel" aria-hidden="true">
-    <div class="modal-dialog " role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content modal-post container">
         <div class="modal-header row">
           <h5 class="modal-title" id="createPostModalLabel">I Played...</h5>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="modal-body row">
-          <div class="col-md-6">
+          <div class="col-md-1">
             <!-- title of the game searched -->
             <h4 id="searched-title" class=""></h4>
             <!-- image of game artwork -->
@@ -35,11 +35,7 @@
 
           <!-- form for content of post -->
           <div class="container-fluid col-md-6 ml-auto">
-            <div class="">
-              <label for="post-content">What did you think of the game?</label>
-              <textarea name="post-content" id="post-review" rows="4" cols="25"></textarea>
-            </div>
-
+            
             <div>
               <form class="new-post-form rating">
                 <input type="radio" name="star" id="star5"><label class="star" for="star5"></label>
@@ -48,6 +44,11 @@
                 <input type="radio" name="star" id="star2"><label class="star" for="star2"></label>
                 <input type="radio" name="star" id="star1"><label class="star" for="star1"></label>
               </form>
+            </div>
+            
+            <div class="">
+              <label for="post-content">What did you think of the game?</label>
+              <textarea name="post-content"  class="form-control" id="post-review" rows="5" cols="5" style="min-width: 140%"></textarea>
             </div>
 
           </div>
