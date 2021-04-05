@@ -51,4 +51,4 @@ Our goal is to create an application that allows gamers to share their thoughts 
 
 ### Link to Deployed Application
 
-the-bloc.herokuapp.com
+https://the-bloc.herokuapp.com
