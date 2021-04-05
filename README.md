@@ -48,3 +48,7 @@ Our goal is to create an application that allows gamers to share their thoughts 
 
 - Kevin Tulakyan
 <http://github.com/KevinTulakyan> <kevintulakyan@gmail.com>
+
+### Link to Deployed Application
+
+the-bloc.herokuapp.com
