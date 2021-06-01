@@ -1,4 +1,4 @@
-# Hrd-Cpy
+# Bloc
 
 ## Description
 
@@ -51,4 +51,4 @@ Our goal is to create an application that allows gamers to share their thoughts 
 
 ### Link to Deployed Application
 
-https://the-bloc.herokuapp.com
+https://bloc-v1.herokuapp.com/
